@@ -1,0 +1,82 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+    
+{% endblock %}
+
+
+{% block content %}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const text = "I'm Gian E. Espineda";
+        const typingElement = document.querySelector('.typing-text');
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); // Adjust speed here (milliseconds)
+            }
+        }
+        
+        typeWriter();
+    });
+</script>
+
+<section class="home_container">
+    
+   <div class="__home">
+    <h1 class="h_h1">Hi, there!</h1>
+    <h1 class="h_h1 typing-text"></h1>
+    <p class="h_p">
+
+
+          <q>
+                    Web development is my playground!
+                    </q>
+
+    </p>
+    <a href="#contact" style="text-decoration: none;" class="h_btn">Contact</a>
+</div>
+
+
+</section>
+
+
+{% include "about.html" %}
+
+
+{% include "skills.html" %}
+
+
+{% include "certificate.html" %}
+
+
+<div id="msg"></div>
+
+{% include "contact.html" %}
+
+
+<footer class="__footer">
+    <div class="__footer-content">
+        
+        <div class="__footer-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <p class="__footer-copyright">
+            &copy; 2025 Gian E. Espineda. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+    
+{% endblock %}

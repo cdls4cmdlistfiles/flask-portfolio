@@ -1,0 +1,24 @@
+<section class="__contact" id="contact">
+    <form id="myForm" hx-on::after-request="handleFormResponse(event)" method="POST" hx-target="#msg" hx-swap="innerHTML" hx-post="{{ url_for("post_message") }}">
+        {{ form.hidden_tag() }}
+
+        <h1 class="c_h1" style="margin: 0;">Get in Touch!</h1>
+        <p class="c_p" style="margin: 0;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        {{ form.name.label }}
+        {{ form.name() }}
+        {{ form.email.label }}
+        {{ form.email() }} 
+        {{ form.message.label }}
+        {{ form.message() }}
+        <button type="submit" class="c_btn">Submit</button>
+    </form>
+</section>
+
+<script>
+  function handleFormResponse(event) {
+    if (event.detail.successful) {
+      document.getElementById('myForm').reset();
+    }
+  }
+</script>
+
